@@ -40,7 +40,15 @@ main:
 
   #print the first two numbers
   li $v0, 1
-  move $a0, $t2
+  move $a0, $t2  #moves value of $t2 into $a0 
+  syscall
+
+  li $v0, 11  #print a space after first value
+  li $a0, 32
+  syscall
+
+  li $v0, 1  #print the second value
+  move $a0, $t3
   syscall
 
 if_illegal:
