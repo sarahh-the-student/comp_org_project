@@ -20,6 +20,9 @@ main:
   syscall
   move $t0, $v0 #save the input to temporary variable $t0
 
-illegal number:
+  #check if N is legal
+  beq $t0, $zero, if_illegal #checks if N is equal to 0
+
+if_illegal:
   #runs if number is illegal
   j main #will jump back to main and repeat the loop
