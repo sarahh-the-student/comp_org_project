@@ -5,7 +5,7 @@
 user_prompt: .asciiz "Please enter an integer number that is greater than or equal to 25! \n"
 
 #error_message if N is 0, negative, or less than 25 and positive
-illegal_error: .asciiz "Illegal Number! \n !"
+illegal_error: .asciiz "Illegal Number! \n"
 
 .text
 main: 
@@ -25,6 +25,10 @@ main:
   li $t1, 25 #loads 25 in temporary variable t1
   blt $t0, $t1, if_illegal # checks if N is less than 25
   blt $t0, $zero, if_illegal #checks if N is less than 0
+
+  #if legal..exit code
+  li $v0, 10
+  syscall
 
 if_illegal:
   #runs if number is illegal
