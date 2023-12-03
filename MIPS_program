@@ -1,0 +1,4 @@
+#MIPS Program
+.data 
+user_prompt: .asciiz "Please enter an integer number that is greater than or equal to 25! \n"
+illegal_error: .asciiz "Illegal Number! \n Please enter another number!"
