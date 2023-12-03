@@ -14,3 +14,11 @@ main:
   li $v0, 4  #system call for printing string
   la $a0, user_prompt  #loads the address and prints the user_prompt
   syscall
+
+  #read integer input
+  li $v0, 5
+  syscall
+  move $t0, $v0 #save the input to temporary variable $t0
+
+illegal number:
+  #runs if number is illegal
