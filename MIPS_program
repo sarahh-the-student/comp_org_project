@@ -83,7 +83,7 @@ fibonacci_loop:
   bnez $t0, fibonacci_loop
 
   #if no more numbers are needed exit the loop and the program
-  li $vo, 10
+  li $v0, 10
   syscall
   
 if_illegal:
