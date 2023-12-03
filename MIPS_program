@@ -81,10 +81,15 @@ fibonacci_loop:
 
   #check if more numbers need to be printed
   bnez $t0, fibonacci_loop
+
+  #if no more numbers are needed exit the loop and the program
+  li $vo, 10
+  syscall
   
 if_illegal:
   #runs if number is illegal
   li $v0, 4
   la $a0, illegal_error
   syscall
+
   j main #will jump back to main and repeat the loop
