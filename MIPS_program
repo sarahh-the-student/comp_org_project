@@ -57,9 +57,16 @@ main:
 
 #calculate Fibonacci sequence
   sub $t0, $t0, 2
+  #run fibonacci loop here
 
 fibonacci_loop:
+  #calculate the fibonacci number
   add $t4, $t2, $t3
+
+  #print the fibonacci number
+  li $v0, 11
+  move $a0, $t4
+  syscall
 
 if_illegal:
   #runs if number is illegal
