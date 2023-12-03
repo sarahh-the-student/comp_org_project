@@ -55,6 +55,12 @@ main:
   li $a0, 32
   syscall
 
+#calculate Fibonacci sequence
+  sub $t0, $t0, 2
+
+fibonacci_loop:
+  add $t4, $t2, $t3
+
 if_illegal:
   #runs if number is illegal
   li $v0, 4
