@@ -75,6 +75,12 @@ fibonacci_loop:
   #update values for the next iteration
   move $t2, $t3
   move $t3, $t4
+
+  #decrement counter
+  sub $t0, $t0, 1
+
+  #check if more numbers need to be printed
+  bnez $t0, fibonacci_loop
   
 if_illegal:
   #runs if number is illegal
