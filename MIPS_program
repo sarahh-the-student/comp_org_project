@@ -22,3 +22,4 @@ main:
 
 illegal number:
   #runs if number is illegal
+  j main #will jump back to main and repeat the loop
