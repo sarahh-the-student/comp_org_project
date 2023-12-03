@@ -4,8 +4,8 @@
 #prompt user to enter number N, N>=25
 user_prompt: .asciiz "Please enter an integer number that is greater than or equal to 25! \n"
 
-#error message if N is 0, negative, or less than 25 and positive
-illegal_error: .asciiz "Illegal Number! \n Please enter another number!"
+#error_message if N is 0, negative, or less than 25 and positive
+illegal_error: .asciiz "Illegal Number! \n !"
 
 .text
 main: 
@@ -25,4 +25,6 @@ main:
 
 if_illegal:
   #runs if number is illegal
+  li $v0, 4
+  la $a0, error_message
   j main #will jump back to main and repeat the loop
