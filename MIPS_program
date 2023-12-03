@@ -38,6 +38,10 @@ main:
   li $t2, 0
   li $t3, 1
 
+  #print the first two numbers
+  li $v0, 1
+  move $a0, $t2
+  syscall
 
 if_illegal:
   #runs if number is illegal
