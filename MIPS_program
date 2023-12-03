@@ -57,7 +57,7 @@ main:
 
 #calculate Fibonacci sequence
   sub $t0, $t0, 2
-  #run fibonacci loop here
+  j fibonacci_loop
 
 fibonacci_loop:
   #calculate the fibonacci number
