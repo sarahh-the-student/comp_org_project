@@ -29,6 +29,6 @@ main:
 if_illegal:
   #runs if number is illegal
   li $v0, 4
-  la $a0, error_message
+  la $a0, illegal_error
   syscall
   j main #will jump back to main and repeat the loop
