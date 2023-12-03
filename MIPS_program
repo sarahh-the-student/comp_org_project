@@ -7,6 +7,9 @@ user_prompt: .asciiz "Please enter an integer number that is greater than or equ
 #error_message if N is 0, negative, or less than 25 and positive
 illegal_error: .asciiz "Illegal Number! \n"
 
+#Finonacci Message that starts the sequence
+fibonacci_seq: .asciiz "Fibonacci sequence: \n"
+
 .text
 main: 
   #Print prompt message 
@@ -26,8 +29,9 @@ main:
   blt $t0, $t1, if_illegal # checks if N is less than 25
   blt $t0, $zero, if_illegal #checks if N is less than 0
 
-  #if legal..exit code
-  li $v0, 10
+  #if N is legal, print the Fibonacci message
+  la $a0, fibonacci_seq
+  li $v0, 4
   syscall
 
 if_illegal:
