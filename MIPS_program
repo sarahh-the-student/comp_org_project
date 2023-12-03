@@ -29,18 +29,18 @@ main:
   blt $t0, $t1, if_illegal # checks if N is less than 25
   blt $t0, $zero, if_illegal #checks if N is less than 0
 
-  #if N is legal, print the Fibonacci message
-  la $a0, fibonacci_seq
+  #if N is legal, start the Fib sequence
   li $v0, 4
+  la $a0, fibonacci_seq
   syscall
 
-  #start the fibonacci sequence with 1 and 0
+  #start the fib sequence with 1 and 0
   li $t2, 0
   li $t3, 1
 
   #print the first two numbers
   li $v0, 1
-  move $a0, $t2  #moves value of $t2 into $a0 
+  move $a0, $t2  
   syscall
 
   li $v0, 11  #print a space after first value
@@ -64,7 +64,7 @@ fibonacci_loop:
   add $t4, $t2, $t3
 
   #print the fibonacci number
-  li $v0, 11
+  li $v0, 1
   move $a0, $t4
   syscall
 
